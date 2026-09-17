@@ -90,7 +90,10 @@ for k=1:numel(groups)
     idx=strcmp({R.candidate},pair{1})&strcmp({R.variant},pair{2});
     rows=R(idx);n=numel(rows);
     complete=strcmp({rows.status},'complete');
-    success=complete&arrayfun(@(r)logical_scalar(r,'validatedFeasible'),rows);
+    complete=complete(:);
+    validated=arrayfun(@(r)logical_scalar(r,'validatedFeasible'),rows);
+    validated=validated(:);
+    success=complete&validated;
     successes=sum(success);rate=successes/n;z=1.95996398454005;
     center=(rate+z^2/(2*n))/(1+z^2/n);
     half=z*sqrt(rate*(1-rate)/n+z^2/(4*n^2))/(1+z^2/n);
@@ -165,11 +168,15 @@ end
 
 function [seedId,basis]=select_representative_seed(R,candidate)
 seedId=NaN;basis='';
-idx=find(strcmp({R.candidate},candidate)&strcmp({R.variant},'TAAS-FPO'));
-if isempty(idx),idx=find(strcmp({R.candidate},candidate));end
-complete=idx(strcmp({R(idx).status},'complete'));
-valid=complete(arrayfun(@(q) logical_scalar(R(q),'validatedFeasible') && ...
-    isfinite(numeric_scalar(R(q),'F')),complete));
+candidateMask=strcmp({R.candidate},candidate);
+variantMask=strcmp({R.variant},'TAAS-FPO');
+idx=find(candidateMask(:)&variantMask(:));
+if isempty(idx),idx=find(candidateMask(:));end
+completeMask=strcmp({R(idx).status},'complete');
+complete=idx(completeMask(:));
+validMask=arrayfun(@(q) logical_scalar(R(q),'validatedFeasible') && ...
+    isfinite(numeric_scalar(R(q),'F')),complete);
+valid=complete(validMask(:));
 if ~isempty(valid)
     values=arrayfun(@(q)numeric_scalar(R(q),'F'),valid);
     target=median(values);[~,j]=min(abs(values-target));chosen=valid(j);
@@ -190,8 +197,10 @@ end
 
 function items=load_seed_records(batchFolder,R,candidate,seedId)
 items=struct('variant',{},'record',{},'recordFile',{});
-idx=find(strcmp({R.candidate},candidate)&arrayfun(@(r) ...
-    numeric_scalar(r,'seedId')==seedId,R)&strcmp({R.status},'complete'));
+candidateMask=strcmp({R.candidate},candidate);
+seedMask=arrayfun(@(r)numeric_scalar(r,'seedId')==seedId,R);
+completeMask=strcmp({R.status},'complete');
+idx=find(candidateMask(:)&seedMask(:)&completeMask(:));
 for k=idx(:)'
     recordFile=fullfile(batchFolder,char(R(k).runId),'record.mat');
     if ~isfile(recordFile)

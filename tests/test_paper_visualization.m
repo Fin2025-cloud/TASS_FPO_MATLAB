@@ -6,11 +6,15 @@ rows(1)=make_row('S1-B','TAAS-FPO',1,true,100,1.1,2.0);
 rows(2)=make_row('S1-B','TAAS-FPO',2,false,NaN,NaN,2.2);
 rows(3)=make_row('S1-B','PSO',1,true,115,1.4,1.8);
 rows(4)=make_row('S1-B','PSO',2,false,NaN,NaN,1.9);
+rows=rows(:); % Match jsondecode's common column-struct orientation.
 paper_write_json(fullfile(root,'run_summary.json'),rows);
 out=fullfile(root,'derived_figures');
 opts=struct('figureVisible','off','exportFIG',false, ...
     'makeRepresentativeComparisons',false,'outputDir',out);
 result=visualize_paper_results(root,opts);
+assert(all([result.aggregate.attemptedRuns]==2),'Run grouping is incorrect.');
+assert(all(abs([result.aggregate.feasibleRate]-0.5)<1e-12), ...
+    'Feasible rates must remain scalar and equal 0.5.');
 assert(isfile(fullfile(out,'aggregate.json')),'Missing aggregate.json.');
 assert(isfile(fullfile(out,'representative_runs.csv')),'Missing representative_runs.csv.');
 assert(isfile(fullfile(out,'visualization_report.mat')),'Missing visualization_report.mat.');
