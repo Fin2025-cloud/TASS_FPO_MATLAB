@@ -116,7 +116,11 @@ for k=1:numel(groups)
     end
     if ~isempty(objective),item.FMedian=median(objective);end
     if ~isempty(times),item.searchSecondsMedian=median(times);end
-    A(end+1)=item; %#ok<AGROW>
+    if isempty(A)
+        A=item;
+    else
+        A(end+1)=item; %#ok<AGROW>
+    end
 end
 end
 

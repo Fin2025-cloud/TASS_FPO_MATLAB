@@ -21,7 +21,11 @@ for k=1:numel(groups)
   qq=paper_percentile(e,[.25,.75]);a.energyQ25=qq(1);a.energyQ75=qq(2);
  end
  ts=[rr.searchSeconds];ts=ts(isfinite(ts));if ~isempty(ts),a.searchSecondsMedian=median(ts);end
- A(end+1)=a;
+ if isempty(A)
+  A=a;
+ else
+  A(end+1)=a;
+ end
 end
 paper_write_json(fullfile(batchFolder,'aggregate.json'),A);
 disp(A);
