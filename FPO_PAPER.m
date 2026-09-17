@@ -8,6 +8,9 @@ function varargout=FPO_PAPER(action,varargin)
 % FPO_PAPER('variants','factorial')           inspect all eight combinations
 % FPO_PAPER('tests')                         deterministic + smoke tests
 % FPO_PAPER('report',batchFolder)             aggregate saved runs
+% FPO_PAPER('visualize',batchFolder)          read-only figures for v2 records
+entryRoot=fileparts(mfilename('fullpath'));
+addpath(entryRoot,'-begin');
 startup();
 if nargin<1,action='help';end
 out=[];
@@ -24,6 +27,7 @@ switch lower(action)
   out=paper_run(cfg);
  case 'run',out=paper_run(varargin{:});
  case 'report',out=paper_report(varargin{:});
+ case {'visualize','plot'},out=visualize_paper_results(varargin{:});
  case 'tests',out=test_paper_protocol();
  otherwise,error('paper:Action','Unknown action %s.',action);
 end

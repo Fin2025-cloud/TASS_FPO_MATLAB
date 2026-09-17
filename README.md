@@ -14,9 +14,10 @@ FPO_LAB                      % 保留环境浏览、候选比较与快速演示
 FPO_PAPER('help')             % 新论文协议
 FPO_PAPER('tests')            % 核心测试；写入 results/verification
 test_paper_extended          % 数值与真实地形扩展测试
+test_paper_visualization     % 新版结果结构与只读输出测试
 ~~~
 
-不要同时把旧版和新版加入 MATLAB 路径。如果此前加载过旧版，请先重新启动 MATLAB 再打开本工程，避免同名函数混用。
+不要同时把旧版和新版加入 MATLAB 路径。如果此前加载过旧版，请先执行 `restoredefaultpath`，再切换到本工程并运行 `startup(true)`。用 `which FPO_LAB -all` 检查时，第一项必须是当前工程中的 `FPO_LAB.m`。
 
 最小单场景试跑（不是论文数据）：
 
@@ -58,7 +59,7 @@ docs/                     实验计划、来源、限制与投稿检查
 tools/                    文稿重建工具（不参与MATLAB搜索）
 ~~~
 
-环境工作室、快速图与旧格式结果查看仍保留；它们不自动读取新协议 JSON。新协议汇总请使用 FPO_PAPER('report',batchFolder)。旧版冻结环境正式运行入口已明确禁用，不能绕过新协议作为本文正式实验。
+环境工作室、快速图与旧格式结果查看仍保留。新版 `results/paper/formal_*` 结果应使用 `FPO_LAB` 菜单“结果与检查→新版正式结果汇总、路径与收敛图”，或直接执行 `FPO_PAPER('visualize',batchFolder)`。可视化只读取 `run_summary.json` 和各运行的 `record.mat`，并把派生图表写入新建的 `figures_paper_时间戳` 子目录；不会覆盖正式记录。仅需查看单个记录时执行 `visualize_one_saved_run(recordFile)`。旧版冻结环境正式运行入口已明确禁用，不能绕过新协议作为本文正式实验。
 
 ## 3. 方法分组
 

@@ -17,6 +17,8 @@ function varargout = FPO_LAB(action,varargin)
 % 设计原则：用户只需要记住本文件。算法、评价器和环境函数继续按模块存放，
 % 以便单元测试和论文复现；旧 main_* 已移到 docs/archive，不加入运行路径。
 
+entryRoot = fileparts(mfilename('fullpath'));
+addpath(entryRoot,'-begin');
 startup();
 if nargin < 1 || isempty(action), action = 'menu'; end
 action = lower(strtrim(char(action)));
@@ -42,7 +44,8 @@ switch action
         out=FPO_PAPER(varargin{:});
         if nargout>0,varargout{1}=out;end
     case 'results'
-        results_menu();
+        out = results_menu();
+        if nargout > 0, varargout{1} = out; end
     case {'verify','check','tests'}
         verification_menu();
     case 'setup'
@@ -225,20 +228,19 @@ end
 function results_and_checks_menu()
 while true
     fprintf('\n--- 结果与检查 ---\n');
-    fprintf('1  汇总新版正式结果\n');
+    fprintf('1  新版正式结果汇总、路径与收敛图\n');
     fprintf('2  用已保存快速结果重新绘图\n');
-    fprintf('3  航迹绝对高度与 AGL 诊断\n');
+    fprintf('3  查看一个保存的 record.mat\n');
     fprintf('4  数据与代码完整性检查\n');
+    fprintf('5  新版结果可视化结构测试\n');
     fprintf('0  返回\n');
     choice = input('请选择：');
     switch choice
         case 1, results_menu();
         case 2, replot_quick_comparison_clean();
-        case 3
-            defaultDir = fullfile(project_root(),'results','formal_selected_v131');
-            p = prompt_path('正式结果目录',defaultDir);
-            diagnose_saved_altitude_clearance(p,1:6);
+        case 3, visualize_one_saved_run();
         case 4, verification_menu();
+        case 5, disp(test_paper_visualization());
         case 0, return;
         otherwise, fprintf('无效选项。\n');
     end
@@ -246,24 +248,15 @@ end
 end
 
 function report = results_menu()
-paperDir = fullfile(project_root(),'results','paper');
-
-batches = dir(fullfile(paperDir,'formal_*'));
-batches = batches([batches.isdir]);
-
-if isempty(batches)
-    error('FPO_LAB:NoFormalBatch', ...
-        '没有找到新版正式实验目录：%s',paperDir);
+try
+    defaultDir = resolve_paper_batch([], 'formal');
+catch ME
+    if ~strcmp(ME.identifier,'paper:NoResultBatch'), rethrow(ME); end
+    defaultDir = fullfile(project_root(),'results','paper');
+    fprintf('当前工程中尚未自动找到正式结果批次，请手动输入批次目录。\n');
 end
-
-% 自动选择最新的正式实验批次，避免硬编码协议哈希
-[~,index] = max([batches.datenum]);
-defaultDir = fullfile(batches(index).folder,batches(index).name);
-
 resultDir = prompt_path('新版正式结果目录',defaultDir);
-
-% 新版结果使用 run_summary.json，由 paper_report 读取
-report = FPO_PAPER('report',resultDir);
+report = visualize_paper_results(resultDir);
 end
 
 function verification_menu()

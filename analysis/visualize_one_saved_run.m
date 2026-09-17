@@ -2,6 +2,11 @@ function visualize_one_saved_run(matFile)
 %VISUALIZE_ONE_SAVED_RUN 快速查看一个已保存的单次实验 MAT 文件。
 %
 % 示例：
+%   matFile = fullfile(project_root(),'results','paper', ...
+%       'formal_协议哈希','S1-B_TAAS-FPO_seed001','record.mat');
+%   visualize_one_saved_run(matFile);
+%
+% 旧版示例：
 %   matFile = fullfile(pwd,'results','formal_equal_FE', ...
 %       'scenario_S1','TAAS-FPO', ...
 %       'TAAS-FPO_S1_run001_seed201001.mat');
@@ -11,8 +16,9 @@ function visualize_one_saved_run(matFile)
 
 if nargin < 1 || isempty(matFile)
     [fileName,folderName] = uigetfile( ...
-        fullfile(pwd,'results','formal_equal_FE','**','*.mat'), ...
-        '选择一个单次实验 MAT 文件');
+        {'*.mat','MAT files (*.mat)'}, ...
+        '选择新版实验目录中的 record.mat', ...
+        fullfile(project_root(),'results','paper'));
 
     if isequal(fileName,0)
         fprintf('用户取消选择，未生成图形。\n');
@@ -55,7 +61,7 @@ required = {'cfg','env','curve','output'};
 for index = 1:numel(required)
     if ~isfield(data,required{index})
         error('visualize_one_saved_run:MissingField', ...
-            'fullData 缺少字段 %s。',required{index});
+        '保存记录缺少字段 %s。',required{index});
     end
 end
 
