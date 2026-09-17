@@ -1,0 +1,12 @@
+{
+  "reviewer": "",
+  "reviewed_at": "",
+  "protocol_sha256": "",
+  "energy_parameters_reviewed": false,
+  "fpo_reference_reviewed": false,
+  "data_split_reviewed": false,
+  "analysis_plan_reviewed": false,
+  "matlab_tests_passed": false,
+  "modern_baselines_reviewed": false,
+  "notes": "Human review required. False flags are not errors to suppress. No results or platform calibration are claimed."
+}
