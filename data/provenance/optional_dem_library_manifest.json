@@ -1,0 +1,149 @@
+{
+  "purpose": "Optional public real-DEM library for visual inspection and later scene expansion; not used by formal S1-S6 in v1.1.1.",
+  "formal_experiment_effect": "none",
+  "candidates": {
+    "C1_mild_low_relief": {
+      "source": {
+        "dataset_name": "Copernicus DEM GLO-30 Public",
+        "data_model": "digital surface model (DSM)",
+        "official_product_page": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+        "download_mirror": "https://pete.stanford.edu/sesfs/srtm30/coptif/Copernicus_DSM_COG_10_N38_00_W077_00_DEM.tif",
+        "tile_name": "Copernicus_DSM_COG_10_N38_00_W077_00_DEM.tif",
+        "filename": "cop_s3_N38W077.tif",
+        "sha256": "febec0a0c8aaab20a5ed2c5c43429f37d61c20d502e0b69978cc568c513ff6e9",
+        "file_size_bytes": 34380957,
+        "crs": "EPSG:4326",
+        "width": 3600,
+        "height": 3600,
+        "resolution_degrees": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "bounds": [
+          -77.00013888888888,
+          38.00013888888889,
+          -76.00013888888888,
+          39.00013888888889
+        ],
+        "dtype": "float32",
+        "nodata": null,
+        "elevation_min_m": -41.73474884033203,
+        "elevation_max_m": 118.00508117675781
+      },
+      "processed": {
+        "role": "real mild-relief terrain",
+        "source_tile": "Copernicus_DSM_COG_10_N38_00_W077_00_DEM.tif",
+        "source_sha256": "febec0a0c8aaab20a5ed2c5c43429f37d61c20d502e0b69978cc568c513ff6e9",
+        "source_audit_crop": {
+          "filename": "S3_Copernicus_GLO30_N38W077_SOURCE_EPSG4326.tif",
+          "sha256": "80b4038de51b851e6612baebd3dce5eeb14300f6952c42411a77f63ae3b1d0de",
+          "crs": "EPSG:4326",
+          "width": 240,
+          "height": 240,
+          "resolution": [
+            0.0002777777777777778,
+            0.0002777777777777778
+          ],
+          "bounds": [
+            -76.86680555555554,
+            38.55013888888889,
+            -76.80013888888888,
+            38.61680555555556
+          ],
+          "elevation_min_m": 23.801591873168945,
+          "elevation_max_m": 83.17816162109375
+        },
+        "crop_window_zero_based_col_row_width_height": [
+          480,
+          1380,
+          240,
+          240
+        ],
+        "selection_note": "Fixed approximately 6 km window selected before optimization for positive-elevation, mild-relief terrain.",
+        "operation": "fixed source-grid crop; reproject to EPSG:32618 at 30 m; nearest-neighbour; lossless DEFLATE GeoTIFF",
+        "resampling": "nearest-neighbour",
+        "terrain_modification": "none",
+        "filename": "C1_Mild_Copernicus_GLO30_N38W077_UTM18N_30m.tif",
+        "sha256": "6512a6dca8b4c323cf26cf7033e3d6ad2d4808b02360e7335fcfcc7836be77bd",
+        "file_size_bytes": 139844,
+        "crs": "EPSG:32618",
+        "width": 189,
+        "height": 243,
+        "resolution_m": [
+          30.0,
+          30.0
+        ],
+        "bounds_m": [
+          337474.937012332,
+          4268497.251540923,
+          343144.937012332,
+          4275787.251540923
+        ],
+        "nodata": -9999.0,
+        "valid_fraction": 1.0,
+        "elevation_min_m": 24.585058212280273,
+        "elevation_max_m": 83.17816162109375,
+        "elevation_mean_m": 53.973040218296376,
+        "elevation_std_m": 11.429893721398544,
+        "relief_m": 58.59310340881348
+      },
+      "source_audit_filename": "C1_Mild_Copernicus_GLO30_N38W077_SOURCE_EPSG4326.tif",
+      "source_audit_sha256": "80b4038de51b851e6612baebd3dce5eeb14300f6952c42411a77f63ae3b1d0de"
+    },
+    "C2_dissected_plateau": {
+      "source_tile": "Copernicus_DSM_COG_10_N36_00_W093_00_DEM.tif",
+      "source_sha256": "099c6a92f3d488318310be2e47c3812f109c9c6a226ce18cf08a02014a2929bb",
+      "download_mirror": "https://pete.stanford.edu/sesfs/srtm30/coptif/Copernicus_DSM_COG_10_N36_00_W093_00_DEM.tif",
+      "crop_window_zero_based_col_row_width_height": [
+        2340,
+        3000,
+        240,
+        240
+      ],
+      "processed": {
+        "filename": "C2_Plateau_Copernicus_GLO30_N36W093_UTM15N_30m.tif",
+        "sha256": "1edbc830ec80a19213b63b5d50536e22ff7f9ec01be685b0c73e99479b477748",
+        "file_size_bytes": 138795,
+        "crs": "EPSG:32615",
+        "width": 198,
+        "height": 246,
+        "resolution_m": [
+          30.0,
+          30.0
+        ],
+        "bounds_m": [
+          558507.2286057412,
+          3995277.6923749517,
+          564447.2286057412,
+          4002657.6923749517
+        ],
+        "nodata": -9999.0,
+        "valid_fraction": 1.0,
+        "elevation_min_m": 102.5,
+        "elevation_max_m": 435.31280517578125,
+        "elevation_mean_m": 274.66048185024744,
+        "elevation_std_m": 75.81462359891799,
+        "relief_m": 332.81280517578125
+      },
+      "source_audit_crop": {
+        "filename": "C2_Plateau_Copernicus_GLO30_N36W093_SOURCE_EPSG4326.tif",
+        "sha256": "3afbb3c659b87ca601aeb6b3b40f0ea2f32a23b7c9e3e59f3d35ff80e5310032",
+        "crs": "EPSG:4326",
+        "width": 240,
+        "height": 240,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "bounds": [
+          -92.35013888888888,
+          36.100138888888885,
+          -92.28347222222222,
+          36.166805555555555
+        ],
+        "elevation_min_m": 102.5,
+        "elevation_max_m": 435.31280517578125
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "manifestVersion": "2.0",
+  "softwareRelease": "TAAS_FPO_MATLAB_v1.3.0_FORMAL_SELECTABLE_ENV",
+  "datasetStatement": "All real terrain candidates use fixed packaged crops of Copernicus DEM GLO-30 Public. The product is a DSM, not a bare-earth DTM.",
+  "integrityStatement": "GeoTIFF elevations are not smoothed, normalized, vertically scaled, or synthetically modified. MAT files are read-speed caches containing the same elevation cells in a local Cartesian orientation.",
+  "officialProductPage": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+  "recommendedCitationDOI": "10.5270/ESA-c5d3d65",
+  "items": [
+    {
+      "terrainKey": "R1",
+      "dataset": "Copernicus DEM GLO-30 Public",
+      "dataModel": "Digital Surface Model (DSM)",
+      "sourceTile": "Copernicus_DSM_COG_10_N38_00_W080_00_DEM.tif",
+      "processedGeoTIFF": "R1_Appalachian_parallel_ridges_Copernicus_GLO30_30m.tif",
+      "crs": "EPSG:32617",
+      "resolutionM": [
+        30.0,
+        30.0
+      ],
+      "description": "Appalachian parallel ridges and valleys",
+      "boundsProjectedM": [
+        627272.7890159744,
+        4208752.318994445,
+        633002.7890159744,
+        4216072.318994445
+      ],
+      "orientation": "Z rows flipped so local y increases northward",
+      "processing": "fixed crop and UTM reprojection already recorded in v1.1.1 provenance; MAT cache adds no resampling or vertical modification",
+      "geoTIFFSHA256": "5a985da12f75ed406e33b754131dd98f1234dcf80b0f39c59e6751193c70576c",
+      "cacheMAT": "R1_Appalachian_parallel_ridges_cache.mat",
+      "cacheSHA256": "87c537a366d073475dd5755656adb5ce9c8504fe94a5321ec5e491f8b3b2aa4e",
+      "width": 191,
+      "height": 244,
+      "elevationMinM": 431.0,
+      "elevationMaxM": 1011.5333862304688,
+      "elevationMeanM": 663.4120883484908,
+      "elevationStdM": 120.71070297380209,
+      "reliefM": 580.5333862304688,
+      "validFraction": 1.0
+    },
+    {
+      "terrainKey": "R2",
+      "dataset": "Copernicus DEM GLO-30 Public",
+      "dataModel": "Digital Surface Model (DSM)",
+      "sourceTile": "Copernicus_DSM_COG_10_N38_00_W119_00_DEM.tif",
+      "processedGeoTIFF": "R2_Sierra_steep_relief_Copernicus_GLO30_30m.tif",
+      "crs": "EPSG:32611",
+      "resolutionM": [
+        30.0,
+        30.0
+      ],
+      "description": "Sierra Nevada steep ridge and valley relief",
+      "boundsProjectedM": [
+        343321.00078283704,
+        4270230.89009728,
+        348991.00078283704,
+        4277520.89009728
+      ],
+      "orientation": "Z rows flipped so local y increases northward",
+      "processing": "fixed crop and UTM reprojection already recorded in v1.1.1 provenance; MAT cache adds no resampling or vertical modification",
+      "geoTIFFSHA256": "0af84fe776711dc14eeac12f345c8a8a2043bb254e9a171c585c669fc2c5ff79",
+      "cacheMAT": "R2_Sierra_steep_relief_cache.mat",
+      "cacheSHA256": "a755506961be8a57963e9483fe67380dffd14d6c5c9e4e0e8500538187ab5b09",
+      "width": 189,
+      "height": 243,
+      "elevationMinM": 1196.0,
+      "elevationMaxM": 3427.58056640625,
+      "elevationMeanM": 2139.595483482428,
+      "elevationStdM": 533.2588030058612,
+      "reliefM": 2231.58056640625,
+      "validFraction": 1.0
+    },
+    {
+      "terrainKey": "R3",
+      "dataset": "Copernicus DEM GLO-30 Public",
+      "dataModel": "Digital Surface Model (DSM)",
+      "sourceTile": "Copernicus_DSM_COG_10_N46_00_E083_00_DEM.tif",
+      "processedGeoTIFF": "R3_Altai_high_mountain_Copernicus_GLO30_30m.tif",
+      "crs": "EPSG:32644",
+      "resolutionM": [
+        30.0,
+        30.0
+      ],
+      "description": "Altai high-mountain terrain",
+      "boundsProjectedM": [
+        715792.6744376787,
+        5198147.507329758,
+        720592.6744376787,
+        5205377.507329758
+      ],
+      "orientation": "Z rows flipped so local y increases northward",
+      "processing": "fixed crop and UTM reprojection already recorded in v1.1.1 provenance; MAT cache adds no resampling or vertical modification",
+      "geoTIFFSHA256": "2fb065653e194058d02a077320d758e9c476021d49c21e79f5912812b706cd00",
+      "cacheMAT": "R3_Altai_high_mountain_cache.mat",
+      "cacheSHA256": "cc84a5e8a87782834f919ed7f4ced8388885af7abe5ae71870fa2b1abf5eda4e",
+      "width": 160,
+      "height": 241,
+      "elevationMinM": 1203.4215087890625,
+      "elevationMaxM": 2635.834228515625,
+      "elevationMeanM": 1748.9333691387255,
+      "elevationStdM": 336.9405916920392,
+      "reliefM": 1432.4127197265625,
+      "validFraction": 1.0
+    },
+    {
+      "terrainKey": "R4",
+      "dataset": "Copernicus DEM GLO-30 Public",
+      "dataModel": "Digital Surface Model (DSM)",
+      "sourceTile": "Copernicus_DSM_COG_10_N38_00_W077_00_DEM.tif",
+      "processedGeoTIFF": "R4_Mild_rolling_terrain_Copernicus_GLO30_30m.tif",
+      "crs": "EPSG:32618",
+      "resolutionM": [
+        30.0,
+        30.0
+      ],
+      "description": "Low-relief rolling terrain",
+      "boundsProjectedM": [
+        337474.937012332,
+        4268497.251540923,
+        343144.937012332,
+        4275787.251540923
+      ],
+      "orientation": "Z rows flipped so local y increases northward",
+      "processing": "fixed crop and UTM reprojection already recorded in v1.1.1 provenance; MAT cache adds no resampling or vertical modification",
+      "geoTIFFSHA256": "6512a6dca8b4c323cf26cf7033e3d6ad2d4808b02360e7335fcfcc7836be77bd",
+      "cacheMAT": "R4_Mild_rolling_terrain_cache.mat",
+      "cacheSHA256": "b1c9486572d662691add8aff9e33900b565d7aabbd4139e416899e1e593b25ce",
+      "width": 189,
+      "height": 243,
+      "elevationMinM": 24.585058212280273,
+      "elevationMaxM": 83.17816162109375,
+      "elevationMeanM": 53.973040218296376,
+      "elevationStdM": 11.429893721398544,
+      "reliefM": 58.59310340881348,
+      "validFraction": 1.0
+    },
+    {
+      "terrainKey": "R5",
+      "dataset": "Copernicus DEM GLO-30 Public",
+      "dataModel": "Digital Surface Model (DSM)",
+      "sourceTile": "Copernicus_DSM_COG_10_N36_00_W093_00_DEM.tif",
+      "processedGeoTIFF": "R5_Dissected_plateau_Copernicus_GLO30_30m.tif",
+      "crs": "EPSG:32615",
+      "resolutionM": [
+        30.0,
+        30.0
+      ],
+      "description": "Dissected plateau and dense valley terrain",
+      "boundsProjectedM": [
+        558507.2286057412,
+        3995277.6923749517,
+        564447.2286057412,
+        4002657.6923749517
+      ],
+      "orientation": "Z rows flipped so local y increases northward",
+      "processing": "fixed crop and UTM reprojection already recorded in v1.1.1 provenance; MAT cache adds no resampling or vertical modification",
+      "geoTIFFSHA256": "1edbc830ec80a19213b63b5d50536e22ff7f9ec01be685b0c73e99479b477748",
+      "cacheMAT": "R5_Dissected_plateau_cache.mat",
+      "cacheSHA256": "e7511c12ea28027b80fa0d900aa1c8268ce466a1e01407cbbb02968dd77b002c",
+      "width": 198,
+      "height": 246,
+      "elevationMinM": 102.5,
+      "elevationMaxM": 435.31280517578125,
+      "elevationMeanM": 274.66048185024744,
+      "elevationStdM": 75.81462359891798,
+      "reliefM": 332.81280517578125,
+      "validFraction": 1.0
+    }
+  ],
+  "inheritedFrom": "TAAS_FPO_ENV_LIBRARY_v1.2.0 data provenance; data files unchanged"
+}

@@ -1,0 +1,167 @@
+{
+  "release": "v1.1.1",
+  "all_artifact_hashes_match": true,
+  "artifact_checks": [
+    {
+      "scenario": "S3",
+      "artifact": "processed",
+      "file": "data/dem/processed/S3_Copernicus_GLO30_N38W080_UTM17N_30m.tif",
+      "expected": "5a985da12f75ed406e33b754131dd98f1234dcf80b0f39c59e6751193c70576c",
+      "actual": "5a985da12f75ed406e33b754131dd98f1234dcf80b0f39c59e6751193c70576c",
+      "matched": true
+    },
+    {
+      "scenario": "S3",
+      "artifact": "source_audit",
+      "file": "data/dem/source_crops/S3_Copernicus_GLO30_N38W080_SOURCE_EPSG4326.tif",
+      "expected": "3700fe30ba4b380e026130af761cb1b2e8ab9b370733ba7779bcaec503c52e3d",
+      "actual": "3700fe30ba4b380e026130af761cb1b2e8ab9b370733ba7779bcaec503c52e3d",
+      "matched": true
+    },
+    {
+      "scenario": "S4",
+      "artifact": "processed",
+      "file": "data/dem/processed/S4_Copernicus_GLO30_N38W119_UTM11N_30m.tif",
+      "expected": "0af84fe776711dc14eeac12f345c8a8a2043bb254e9a171c585c669fc2c5ff79",
+      "actual": "0af84fe776711dc14eeac12f345c8a8a2043bb254e9a171c585c669fc2c5ff79",
+      "matched": true
+    },
+    {
+      "scenario": "S4",
+      "artifact": "source_audit",
+      "file": "data/dem/source_crops/S4_Copernicus_GLO30_N38W119_SOURCE_EPSG4326.tif",
+      "expected": "30098b3465e7dc19cf5971b0eb4f4b79f761ee84c98fee8d8b87446022bf5130",
+      "actual": "30098b3465e7dc19cf5971b0eb4f4b79f761ee84c98fee8d8b87446022bf5130",
+      "matched": true
+    },
+    {
+      "scenario": "S5_S6",
+      "artifact": "processed",
+      "file": "data/dem/processed/S5S6_Copernicus_GLO30_N46E083_UTM44N_30m.tif",
+      "expected": "2fb065653e194058d02a077320d758e9c476021d49c21e79f5912812b706cd00",
+      "actual": "2fb065653e194058d02a077320d758e9c476021d49c21e79f5912812b706cd00",
+      "matched": true
+    },
+    {
+      "scenario": "S5_S6",
+      "artifact": "source_audit",
+      "file": "data/dem/source_crops/S5S6_Copernicus_GLO30_N46E083_SOURCE_EPSG4326.tif",
+      "expected": "72331eb6a328c4f0910d823faf9614974689134386c6d03196c9194f98948a54",
+      "actual": "72331eb6a328c4f0910d823faf9614974689134386c6d03196c9194f98948a54",
+      "matched": true
+    },
+    {
+      "scenario": "C1_mild_low_relief",
+      "artifact": "optional_processed",
+      "file": "data/dem/candidates/C1_Mild_Copernicus_GLO30_N38W077_UTM18N_30m.tif",
+      "expected": "6512a6dca8b4c323cf26cf7033e3d6ad2d4808b02360e7335fcfcc7836be77bd",
+      "actual": "6512a6dca8b4c323cf26cf7033e3d6ad2d4808b02360e7335fcfcc7836be77bd",
+      "matched": true
+    },
+    {
+      "scenario": "C2_dissected_plateau",
+      "artifact": "optional_processed",
+      "file": "data/dem/candidates/C2_Plateau_Copernicus_GLO30_N36W093_UTM15N_30m.tif",
+      "expected": "1edbc830ec80a19213b63b5d50536e22ff7f9ec01be685b0c73e99479b477748",
+      "actual": "1edbc830ec80a19213b63b5d50536e22ff7f9ec01be685b0c73e99479b477748",
+      "matched": true
+    }
+  ],
+  "raster_stats": {
+    "S3": {
+      "crs": "EPSG:32617",
+      "resolution": [
+        30.0,
+        30.0
+      ],
+      "width": 191,
+      "height": 244,
+      "valid_fraction": 1.0,
+      "min": 431.0,
+      "max": 1011.5333862304688,
+      "relief": 580.5333862304688
+    },
+    "S4": {
+      "crs": "EPSG:32611",
+      "resolution": [
+        30.0,
+        30.0
+      ],
+      "width": 189,
+      "height": 243,
+      "valid_fraction": 1.0,
+      "min": 1196.0,
+      "max": 3427.58056640625,
+      "relief": 2231.58056640625
+    },
+    "S5_S6": {
+      "crs": "EPSG:32644",
+      "resolution": [
+        30.0,
+        30.0
+      ],
+      "width": 160,
+      "height": 241,
+      "valid_fraction": 1.0,
+      "min": 1203.4215087890625,
+      "max": 2635.834228515625,
+      "relief": 1432.4127197265625
+    }
+  },
+  "s2_topology": {
+    "min": 22.35508695145988,
+    "max": 318.50915330218595,
+    "ridge_plus_clearance_exceeds_ceiling": true,
+    "passage_counts": [
+      3,
+      3
+    ]
+  },
+  "matlab_primary_function_checks": [
+    {
+      "file": "uav_problems/model2_mountain/build_multichannel_environment.m",
+      "primary_function": "build_multichannel_environment",
+      "filename": "build_multichannel_environment",
+      "matched": true
+    },
+    {
+      "file": "uav_problems/model2_mountain/optional_dem_catalog.m",
+      "primary_function": "optional_dem_catalog",
+      "filename": "optional_dem_catalog",
+      "matched": true
+    },
+    {
+      "file": "experiments/rerun_modified_scenarios_incremental.m",
+      "primary_function": "rerun_modified_scenarios_incremental",
+      "filename": "rerun_modified_scenarios_incremental",
+      "matched": true
+    },
+    {
+      "file": "visualize_real_dem_library.m",
+      "primary_function": "visualize_real_dem_library",
+      "filename": "visualize_real_dem_library",
+      "matched": true
+    },
+    {
+      "file": "diagnose_saved_altitude_clearance.m",
+      "primary_function": "diagnose_saved_altitude_clearance",
+      "filename": "diagnose_saved_altitude_clearance",
+      "matched": true
+    },
+    {
+      "file": "tests/test_s2_multichannel_topology.m",
+      "primary_function": "test_s2_multichannel_topology",
+      "filename": "test_s2_multichannel_topology",
+      "matched": true
+    },
+    {
+      "file": "tests/test_s3_featured_real_dem.m",
+      "primary_function": "test_s3_featured_real_dem",
+      "filename": "test_s3_featured_real_dem",
+      "matched": true
+    }
+  ],
+  "python_dem_script_compiles": true,
+  "matlab_runtime_executed": false,
+  "matlab_runtime_note": "MATLAB/Octave is not installed in the generation environment; run run_all_tests and smoke_test_six_scenarios locally before formal use."
+}

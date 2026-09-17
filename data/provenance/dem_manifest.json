@@ -1,0 +1,265 @@
+{
+  "manifest_version": "1.2",
+  "software_release": "TAAS_FPO_MATLAB_v1.1.1_FEATURED_DEM_INCREMENTAL",
+  "generated_utc": "2026-07-27T00:00:00+00:00",
+  "integrity_statement": "Each packaged DEM is a fixed crop of an identified Copernicus GLO-30 source tile. Processing is limited to crop, metre-based UTM reprojection, nearest-neighbour resampling and lossless file compression. No smoothing, synthetic perturbation, vertical scaling or terrain normalization is applied.",
+  "packaging_note": "Complete 33-37 MB source tiles are not duplicated in the delivery archive. Exact public URLs, official filenames and complete-source SHA-256 values are recorded. Small source-grid audit crops preserve the selected original pixels before UTM reprojection.",
+  "recommended_citation_doi": "10.5270/ESA-c5d3d65",
+  "copernicus_attribution": "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+  "original_sources": {
+    "S3": {
+      "dataset_name": "Copernicus DEM GLO-30 Public",
+      "data_model": "digital surface model (DSM)",
+      "official_product_page": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "download_mirror": "https://pete.stanford.edu/sesfs/srtm30/coptif/Copernicus_DSM_COG_10_N38_00_W080_00_DEM.tif",
+      "tile_name": "Copernicus_DSM_COG_10_N38_00_W080_00_DEM.tif",
+      "filename": "Copernicus_DSM_COG_10_N38_00_W080_00_DEM.tif",
+      "sha256": "cdeb227881eab36a37ae884554420c7fa7377e3ba4b5acb925b0b602ab98f220",
+      "file_size_bytes": 43491648,
+      "crs": "EPSG:4326",
+      "width": 3600,
+      "height": 3600,
+      "resolution_degrees": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "bounds": [
+        -80.00013888888888,
+        38.00013888888889,
+        -79.00013888888888,
+        39.00013888888889
+      ],
+      "dtype": "float32",
+      "nodata": null,
+      "elevation_min_m": 257.0,
+      "elevation_max_m": 1487.7197265625
+    },
+    "S4": {
+      "dataset_name": "Copernicus DEM GLO-30 Public",
+      "data_model": "digital surface model (DSM)",
+      "official_product_page": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "download_mirror": "https://pete.stanford.edu/sesfs/srtm30/coptif/Copernicus_DSM_COG_10_N38_00_W119_00_DEM.tif",
+      "tile_name": "Copernicus_DSM_COG_10_N38_00_W119_00_DEM.tif",
+      "filename": "cop_s4_N38W119.tif",
+      "sha256": "141e26e2b83ad696ff9eeb10ee0ddcdc0b461668b48097d13c1c377751bdffda",
+      "file_size_bytes": 38553405,
+      "crs": "EPSG:4326",
+      "width": 3600,
+      "height": 3600,
+      "resolution_degrees": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "bounds": [
+        -119.00013888888888,
+        38.00013888888889,
+        -118.00013888888888,
+        39.00013888888889
+      ],
+      "dtype": "float32",
+      "nodata": null,
+      "elevation_min_m": 1194.4144287109375,
+      "elevation_max_m": 3427.58056640625
+    },
+    "S5_S6": {
+      "dataset_name": "Copernicus DEM GLO-30 Public",
+      "data_model": "digital surface model (DSM)",
+      "official_product_page": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "download_mirror": "https://pete.stanford.edu/sesfs/srtm30/coptif/Copernicus_DSM_COG_10_N46_00_E083_00_DEM.tif",
+      "tile_name": "Copernicus_DSM_COG_10_N46_00_E083_00_DEM.tif",
+      "filename": "cop_s56_N46E083.tif",
+      "sha256": "3fedcbe1a4943fb5981b92ef327471c71c3395bafc533bc2df81895c4890fc57",
+      "file_size_bytes": 38127508,
+      "crs": "EPSG:4326",
+      "width": 3600,
+      "height": 3600,
+      "resolution_degrees": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "bounds": [
+        82.99986111111112,
+        46.00013888888889,
+        83.99986111111112,
+        47.00013888888889
+      ],
+      "dtype": "float32",
+      "nodata": null,
+      "elevation_min_m": 412.031982421875,
+      "elevation_max_m": 2851.175048828125
+    }
+  },
+  "processed_products": {
+    "S3": {
+      "role": "real parallel-ridge and valley terrain",
+      "source_tile": "Copernicus_DSM_COG_10_N38_00_W080_00_DEM.tif",
+      "source_sha256": "cdeb227881eab36a37ae884554420c7fa7377e3ba4b5acb925b0b602ab98f220",
+      "source_audit_crop": {
+        "filename": "S3_Copernicus_GLO30_N38W080_SOURCE_EPSG4326.tif",
+        "sha256": "3700fe30ba4b380e026130af761cb1b2e8ab9b370733ba7779bcaec503c52e3d",
+        "crs": "EPSG:4326",
+        "width": 240,
+        "height": 240,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "bounds": [
+          -79.55013888888888,
+          38.01680555555556,
+          -79.48347222222222,
+          38.08347222222223
+        ],
+        "elevation_min_m": 431.0,
+        "elevation_max_m": 1013.0034790039062
+      },
+      "crop_window_zero_based_col_row_width_height": [
+        1620,
+        3300,
+        240,
+        240
+      ],
+      "selection_note": "Fixed approximately 6 km window selected before optimization for parallel ridge/valley structure and about 581 m local relief.",
+      "operation": "fixed source-grid crop; reproject to EPSG:32617 at 30 m; nearest-neighbour; lossless DEFLATE GeoTIFF",
+      "resampling": "nearest-neighbour",
+      "terrain_modification": "none",
+      "filename": "S3_Copernicus_GLO30_N38W080_UTM17N_30m.tif",
+      "sha256": "5a985da12f75ed406e33b754131dd98f1234dcf80b0f39c59e6751193c70576c",
+      "file_size_bytes": 125063,
+      "crs": "EPSG:32617",
+      "width": 191,
+      "height": 244,
+      "resolution_m": [
+        30.0,
+        30.0
+      ],
+      "bounds_m": [
+        627272.7890159744,
+        4208752.318994445,
+        633002.7890159744,
+        4216072.318994445
+      ],
+      "nodata": -9999.0,
+      "valid_fraction": 1.0,
+      "elevation_min_m": 431.0,
+      "elevation_max_m": 1011.5333862304688,
+      "elevation_mean_m": 663.4120883484908,
+      "elevation_std_m": 120.7107029738021,
+      "relief_m": 580.5333862304688
+    },
+    "S4": {
+      "role": "real ridge and steep-relief terrain",
+      "source_tile": "Copernicus_DSM_COG_10_N38_00_W119_00_DEM.tif",
+      "source_sha256": "141e26e2b83ad696ff9eeb10ee0ddcdc0b461668b48097d13c1c377751bdffda",
+      "source_audit_crop": {
+        "filename": "S4_Copernicus_GLO30_N38W119_SOURCE_EPSG4326.tif",
+        "sha256": "30098b3465e7dc19cf5971b0eb4f4b79f761ee84c98fee8d8b87446022bf5130",
+        "crs": "EPSG:4326",
+        "width": 240,
+        "height": 240,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "bounds": [
+          -118.80013888888888,
+          38.566805555555554,
+          -118.73347222222222,
+          38.633472222222224
+        ],
+        "elevation_min_m": 1196.0,
+        "elevation_max_m": 3427.58056640625
+      },
+      "crop_window_zero_based_col_row_width_height": [
+        720,
+        1320,
+        240,
+        240
+      ],
+      "selection_note": "Fixed approximately 6 km window selected before optimization for large local relief and ridge/valley structure.",
+      "operation": "fixed source-grid crop; reproject to EPSG:32611 at 30 m; nearest-neighbour; lossless DEFLATE GeoTIFF",
+      "resampling": "nearest-neighbour",
+      "terrain_modification": "none",
+      "filename": "S4_Copernicus_GLO30_N38W119_UTM11N_30m.tif",
+      "sha256": "0af84fe776711dc14eeac12f345c8a8a2043bb254e9a171c585c669fc2c5ff79",
+      "file_size_bytes": 114302,
+      "crs": "EPSG:32611",
+      "width": 189,
+      "height": 243,
+      "resolution_m": [
+        30.0,
+        30.0
+      ],
+      "bounds_m": [
+        343321.00078283704,
+        4270230.89009728,
+        348991.00078283704,
+        4277520.89009728
+      ],
+      "nodata": -9999.0,
+      "valid_fraction": 1.0,
+      "elevation_min_m": 1196.0,
+      "elevation_max_m": 3427.58056640625,
+      "elevation_mean_m": 2139.595483482428,
+      "elevation_std_m": 533.2588030058612,
+      "relief_m": 2231.58056640625
+    },
+    "S5_S6": {
+      "role": "real high-relief terrain shared by wind and dynamic-obstacle scenarios",
+      "source_tile": "Copernicus_DSM_COG_10_N46_00_E083_00_DEM.tif",
+      "source_sha256": "3fedcbe1a4943fb5981b92ef327471c71c3395bafc533bc2df81895c4890fc57",
+      "source_audit_crop": {
+        "filename": "S5S6_Copernicus_GLO30_N46E083_SOURCE_EPSG4326.tif",
+        "sha256": "72331eb6a328c4f0910d823faf9614974689134386c6d03196c9194f98948a54",
+        "crs": "EPSG:4326",
+        "width": 240,
+        "height": 240,
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "bounds": [
+          83.83319444444444,
+          46.90013888888889,
+          83.89986111111111,
+          46.96680555555556
+        ],
+        "elevation_min_m": 1203.4215087890625,
+        "elevation_max_m": 2637.279541015625
+      },
+      "crop_window_zero_based_col_row_width_height": [
+        3000,
+        120,
+        240,
+        240
+      ],
+      "selection_note": "Fixed approximately 6 km window selected before optimization for high-relief mountain terrain; S5 and S6 intentionally share it.",
+      "operation": "fixed source-grid crop; reproject to EPSG:32644 at 30 m; nearest-neighbour; lossless DEFLATE GeoTIFF",
+      "resampling": "nearest-neighbour",
+      "terrain_modification": "none",
+      "filename": "S5S6_Copernicus_GLO30_N46E083_UTM44N_30m.tif",
+      "sha256": "2fb065653e194058d02a077320d758e9c476021d49c21e79f5912812b706cd00",
+      "file_size_bytes": 101134,
+      "crs": "EPSG:32644",
+      "width": 160,
+      "height": 241,
+      "resolution_m": [
+        30.0,
+        30.0
+      ],
+      "bounds_m": [
+        715792.6744376787,
+        5198147.507329758,
+        720592.6744376787,
+        5205377.507329758
+      ],
+      "nodata": -9999.0,
+      "valid_fraction": 1.0,
+      "elevation_min_m": 1203.4215087890625,
+      "elevation_max_m": 2635.834228515625,
+      "elevation_mean_m": 1748.9333691387255,
+      "elevation_std_m": 336.9405916920393,
+      "relief_m": 1432.4127197265625
+    }
+  }
+}

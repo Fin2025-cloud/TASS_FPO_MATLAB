@@ -1,0 +1,31 @@
+﻿candidate_id,scenario,name,terrain_source
+S1-A,1,Rolling foothills,synthetic
+S1-B,1,Scattered mountain groups,synthetic
+S1-C,1,Ridge and basin,synthetic
+S1-D,1,Twin peaks and saddle,synthetic
+S1-E,1,Asymmetric upland,synthetic
+S2-A,2,Braided valley network,synthetic
+S2-B,2,Staggered mountain passes,synthetic
+S2-C,2,Forked canyon system,synthetic
+S2-D,2,Mountain basin exits,synthetic
+S2-E,2,Interlocking ridge network,synthetic
+S3-A,3,Real parallel-ridge corridor,R1
+S3-B,3,Real dissected plateau,R5
+S3-C,3,Real mild rolling reference,R4
+S3-D,3,Real Sierra cross-slope,R2
+S3-E,3,Real Altai valley crossing,R3
+S4-A,4,Appalachian restricted corridors,R1
+S4-B,4,Plateau tower cluster,R5
+S4-C,4,Sierra offset restrictions,R2
+S4-D,4,Altai ridge-side restrictions,R3
+S4-E,4,Mild terrain dense obstacles,R4
+S5-A,5,Appalachian crosswind,R1
+S5-B,5,Plateau valley-flow wind,R5
+S5-C,5,Sierra vertical shear,R2
+S5-D,5,Altai mountain rotor,R3
+S5-E,5,Mild terrain rotating flow,R4
+S6-A,6,Appalachian single crossing UAV,R1
+S6-B,6,Plateau dual traffic,R5
+S6-C,6,Sierra opposing traffic,R2
+S6-D,6,Altai mixed dynamic traffic,R3
+S6-E,6,Mild terrain bird group,R4
